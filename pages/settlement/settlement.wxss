@@ -1,0 +1,138 @@
+/* pages/settlement/settlement.wxss */
+
+.address {
+    background: #f2f2f2;
+    font-size: 14px;
+}
+
+.flex-box {
+    background: #746a90;
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.address-user {
+    width: 100%;
+}
+
+.icon-right {
+    margin-top: 10px;
+}
+
+.no-address {
+    color: #333;
+    height: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.no-address-text {
+    font-size: 14px;
+    color: #333;
+}
+
+.cart-list {
+    background: #f2f2f2;
+    margin-bottom: 100px;
+}
+
+.cart-items {
+    display: flex;
+    border-bottom: 1px #f2f2f2 solid;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.banner {
+    width: 150rpx;
+    height: 150rpx;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+.cart-right {
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.title-box {
+    display: flex;
+}
+
+.title {
+    width: 70%;
+    font-size: 12px;
+    color: #333;
+    line-height: 14px;
+}
+
+.price-box {
+    width: 30%;
+}
+
+.promotion-price, .total-price {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    line-height: 14px;
+    margin-bottom: 5px;
+}
+
+.total-price {
+    padding-bottom: 10px;
+}
+
+.original-price {
+    font-size: 12px;
+    text-decoration: line-through;
+    text-align: right;
+    line-height: 14px;
+    color: #999;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-btn, .add-btn {
+    font-size: 14px !important;
+}
+
+.footer {
+    border-top: 1px #f2f2f2 solid;
+    position: fixed;
+    height: 85px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1000;
+}
+
+.sum {
+    text-align: center;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.sum-num {
+    display: inline-block;
+    color: #f73859;
+}
+
+.settlement {
+    border-radius: 0;
+    background: green;
+    color: #fff;
+    font-size: 14px;
+    margin: 0 10px 10px 10px;
+}

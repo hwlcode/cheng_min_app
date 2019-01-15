@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "hot-products": "../../components/hot-products/hot-products",
+        "num-controller": "../../components/num-controller/num-controller"
+    },
+    "navigationBarTitleText": "购物车",
+    "navigationBarBackgroundColor": "#f73859",
+    "navigationBarTextStyle": "white"
+}

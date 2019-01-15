@@ -1,0 +1,24 @@
+/* components/num-controller/num-controller.wxss */
+@import "../../lib/style/iconfont";
+.num-controller{
+    text-align: center;
+}
+.add-btn {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sub-btn {
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.goods-num {
+    font-size: 20px;
+    color: #f73859;
+    padding: 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+}

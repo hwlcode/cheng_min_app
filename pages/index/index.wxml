@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='title'>最新活动</view>
+    <view wx:for="{{banners}}" wx:for-item="i" wx:key="homeBanner" class='banner-box'>
+        <image class='banner' src="{{i}}" mode="widthFix"/>
+    </view>
+</view>
+<view>
+    <hot-products></hot-products>
+</view>

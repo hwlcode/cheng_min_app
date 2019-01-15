@@ -1,0 +1,17 @@
+<view wx:if="{{products.length > 0}}">
+    <view class="title">猜你喜欢</view>
+    <view class='product-box-list'>
+        <view class='product-item' wx:for="{{products}}" wx:for-index="idx" wx:key="products" wx:for-item="product">
+            <navigator url="../detail/detail?id={{product._id}}" hover-class="other-navigator-hover">
+                <view class='product-item-box'>
+                    <view class='product-banner'>
+                        <image class="banner" src="{{product.banner}}" />
+                    </view>
+                    <view class='pro-title'>{{product.title}}</view>
+                    <view class='pro-promotion-price'>￥{{product.promotion_price}}元/{{product.unit}}</view>
+                    <view class='pro-original-price'>￥{{product.original_price}}元/{{product.unit}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

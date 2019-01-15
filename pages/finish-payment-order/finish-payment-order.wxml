@@ -1,0 +1,36 @@
+<scroll-view scroll-y scroll-top="0" lower-threshold="100" bindscrolltolower="getMoreProduct" style="height: {{windowHeight}}px;" wx:if="{{orderList.length > 0}}">
+    <view class='order-list'>
+        <view class='order-items' wx:for="{{orderList}}" wx:for-index="idx" wx:for-item="order" wx:key="orders" bindtap='goToDetail' id="{{order._id}}">
+            <view class="order-header">
+                <view class='order-no'>订单编号：{{order.sn}}</view>
+                <view class='order-status {{order.statusClass}}'>{{order.orderStatusText}}</view>
+            </view>
+            <view class='order-body' wx:for="{{order.products}}" wx:for-index="idxs" wx:for-item="product" wx:key="products">
+                <view class='order-img'>
+                    <image class="banner" src='{{product.product.banner}}' mode='widthFix' />
+                </view>
+                <view class="order-msg">
+                    <view class='flex-box'>
+                        <view class='flex-left'>
+                            <view class='title'>{{product.product.title}}</view>
+                        </view>
+                        <view class='flex-right'>
+                            <view class='price'>￥{{product.product.promotion_price}}元/{{product.product.unit}}</view>
+                            <view class='num'>x {{product.num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="pro-sum-msg">
+                实付 ￥{{order.sumPrice}}元
+            </view>
+            <view class='order-footer' wx:if="{{order.status == 0}}">
+                <button class='pay-now'>去付款</button>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="no-oders" wx:if="{{orderList.length == 0}}">
+    <view>暂无订单记录</view>
+    <view class='desc'>您的购物记录会显示在这里</view>
+</view>

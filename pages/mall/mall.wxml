@@ -1,0 +1,29 @@
+<!--pages/mall/mall.wxml-->
+<form>
+    <view class="section">
+        <input type="text" confirm-type="search" placeholder="输入搜索关键字" class="search" bindinput="search" />
+    </view>
+</form>
+<view class='product-list'>
+    <scroll-view scroll-y class='cate'>
+        <view data-index="0" data-id="" class="cate-item  {{num == 0? 'selected':''}}" bindtap="selectMenu">全部</view>
+        <view wx:for="{{cates}}" wx:for-index="idx" wx:key="cates" wx:for-item="cate" data-index="{{idx + 1 }}" data-id="{{cate._id}}" class="cate-item {{num == idx + 1 ? 'selected':''}}" bindtap="selectMenu">{{cate.name}}</view>
+    </scroll-view>
+    <scroll-view scroll-y scroll-top="scrollTop" lower-threshold="100" bindscrolltolower="getMoreProduct" class='products-box'>
+        <view class='product-box-list'>
+            <view class='product-item' wx:for="{{products}}" wx:for-index="idx" wx:key="products" wx:for-item="product">
+                <navigator url="../detail/detail?id={{product._id}}"      hover-class="other-navigator-hover">
+                    <view class='product-item-box'>
+                        <view class='product-banner'>
+                            <image class="banner" src="{{product.banner}}" mode="widthFix"/>
+                        </view>
+                        <view class='pro-title'>{{product.title}}</view>
+                        <view class='pro-promotion-price'>￥{{product.promotion_price}}元/{{product.unit}}</view>
+                        <view class='pro-original-price'>￥{{product.original_price}}元/{{product.unit}}</view>
+                    </view>
+                </navigator>
+            </view>
+            <view wx:if="{{length == 0}}" class="no-products">没有发现符合条件的任何商品</view>
+        </view>
+    </scroll-view>
+</view>

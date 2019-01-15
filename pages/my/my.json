@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "hot-products": "../../components/hot-products/hot-products"
+    },
+    "navigationBarTitleText": "个人中心",
+    "navigationBarBackgroundColor": "#f73859",
+    "navigationBarTextStyle": "white"
+}

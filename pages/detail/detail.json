@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "navigationBarTitleText": "商品详情",
+    "navigationBarBackgroundColor": "#f73859",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {
+        "num-controller": "../../components/num-controller/num-controller",
+        "hot-products": "../../components/hot-products/hot-products"
+    }
+}

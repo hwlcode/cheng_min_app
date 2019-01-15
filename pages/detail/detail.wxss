@@ -1,0 +1,151 @@
+/* pages/detail/detail.wxss */
+
+.detail-wrap {
+    display: flex;
+    position: relative;
+}
+
+.product-banner {
+    height: 240px;
+    position: relative;
+}
+
+.banner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    max-height: 100%;
+    line-height: 100%;
+    background-color: #eee;
+}
+
+.fix-footer {
+    position: fixed;
+    justify-content: space-between;
+    height: 60px;
+    width: 100%;
+    border-top: 1px #f2f2f2 solid;
+    background: #fff;
+    left: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.footer-footer {
+    flex: 1;
+}
+
+.cart {
+    position: relative;
+    height: 40px;
+    background: #fff;
+    line-height: 40px;
+    font-size: 14px;
+    margin: 10px;
+    width: 80px;
+}
+
+.footer-right {
+    flex: 2;
+    text-align: right;
+}
+
+.add-cart {
+    height: 40px;
+    background: #f73859;
+    line-height: 40px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 10px 0;
+    color: #fff;
+    border-radius: 5px 0 0 5px !important;
+}
+
+.buy-now {
+    height: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    line-height: 40px;
+    font-size: 14px;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.icon-cart {
+    font-size: 20px;
+}
+
+.icon-fenxiang {
+    font-size: 25px;
+}
+
+.pro-title {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.pro-promotion-price {
+    font-size: 12px;
+    color: #f73859;
+    padding: 0 10px;
+}
+
+.pro-original-price {
+    font-size: 12px;
+    color: #999;
+    text-decoration: line-through;
+    padding: 0 10px;
+}
+
+.title-box {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.get-num {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px #f2f2f2 solid;
+    border-bottom: 1px #f2f2f2 solid;
+    margin: 10px 0;
+    height: 28px;
+    line-height: 28px;
+}
+
+.num-text {
+    font-size: 14px;
+}
+
+.content {
+    padding: 10px;
+    line-height: 20px;
+    margin: 15px 0;
+    font-size: 12px;
+}
+
+.share-btn{
+    padding: 0;
+    line-height: 20px;
+    border:1px transparent solid!important;
+    color:#999;
+    margin: 0;
+}
+
+.cart-num{
+    position: absolute;
+    top:4px;
+    left:45px;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50rpx;
+    background: red;
+    text-align: center;
+    color: white;
+    line-height: 40rpx;
+    font-size: 11px;
+}

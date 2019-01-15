@@ -1,0 +1,5 @@
+<view class="num-controller">
+    <view class="iconfont icon-reduce_icon sub-btn" hidden="{{num<1}}" bindtap="sub"></view>
+    <view class="goods-num" hidden="{{num<1}}">{{num}}</view>
+    <view class="iconfont icon-add add-btn" bindtap="add"></view>
+</view>

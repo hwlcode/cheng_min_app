@@ -1,0 +1,9 @@
+<view class='login-box'>
+    <view class='logo'>
+        <image src='../../lib/images/logo.png' class='logo-img' mode='widthFix'/>
+    </view>
+    <view class='title'>该页面需要以下权限才可以访问</view>
+    <view class='content'>获取你的公开信息（昵称、头像等）</view>
+    <button type='primary' class='login' open-type="getUserInfo" bindgetuserinfo='getUserInfoMsg'>授权登录</button>
+    <button type='default' class='go-home' bindtap='goHome'>返回首页</button>
+</view>

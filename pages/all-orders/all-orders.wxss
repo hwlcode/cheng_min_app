@@ -1,0 +1,105 @@
+.no-oders {
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin: 150px 0 0 0;
+}
+
+.desc {
+    font-size: 12px;
+    color: #999;
+}
+
+.order-list {
+    background: #f2f2f2;
+    font-size: 12px;
+}
+
+.order-items {
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px #f2f2f2 solid;
+}
+
+.order-no {
+    color: #999;
+}
+
+.order-status {
+    font-size: 14px;
+}
+
+.yellow {
+    color: yellowgreen;
+}
+
+.green {
+    color: green;
+}
+
+.gay {
+    color: #999;
+}
+
+.order-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.order-img {
+    width: 150rpx;
+}
+
+.banner {
+    width: 100%;
+}
+
+.order-msg {
+    width: 100%;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.price {
+    font-size: 14px;
+}
+
+.num {
+    color: #999;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.pro-sum-msg {
+    font-size: 14px;
+    text-align: right;
+}
+
+.order-footer {
+    border-top: 1px #f2f2f2 solid;
+    padding: 10px 0 0 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pay-now {
+    width: 70px;
+    font-size: 12px;
+    border-radius: 0;
+    background: #f73859;
+    color:#fff; 
+    margin: 0;
+}

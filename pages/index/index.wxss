@@ -1,0 +1,19 @@
+.container {
+    background: #f2f2f2;
+}
+.title{
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px 0;
+}
+.banner-box{
+    margin: 0 10px 10px 10px;
+}
+.banner{
+    width: 100%; 
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+

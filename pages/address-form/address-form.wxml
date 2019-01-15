@@ -1,0 +1,31 @@
+<view class='form-box'>
+    <form bindsubmit="formSubmit">
+        <view class="form-item">
+            <view class="section_item">收件人</view>
+            <input placeholder="收件人" id="user" name="user" bindblur="isReqired" class='form-item-input' value='{{address.user}}' />
+        </view>
+        <view class="form-item">
+            <view class="section_item">手机号码</view>
+            <input placeholder="手机号码" id="phone" name="phone" bindblur="checkPhone" class='form-item-input' value='{{address.phone}}' />
+        </view>
+        <view class="form-item">
+            <view class="section_item">省市区</view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{region}}" style='width:100%;' id="region" name="region">
+                <view class="form-item-input">
+                    {{region[0]}}，{{region[1]}}，{{region[2]}}
+                </view>
+            </picker>
+        </view>
+        <view class="form-item">
+            <view class="section_item">详细地址</view>
+            <input placeholder="详细地址" id="address" bindblur="isReqired" name="address" class='form-item-input' value='{{address.address}}' />
+        </view>
+
+        <view class="btn-area">
+            <view class='btn-box'>
+                <button type='default' class="del-btn" bindtap='delAddress' wx:if="{{id != ''}}">删除</button>
+                <button form-type="submit" class='submit-btn'>保存收货地址</button>
+            </view>
+        </view>
+    </form>
+</view>

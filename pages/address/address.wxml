@@ -1,0 +1,19 @@
+<!--pages/address/address.wxml-->
+<view class='address-list'>
+    <radio-group class="radio-group" bindchange="radioChange">
+        <view class='address-item' wx:for="{{addresses}}" wx:for-index="idx" wx:for-item="address" wx:key="addresses">
+            <radio value="{{address._id}}" checked="{{address.isDefault}}" />
+            <view class="address-msg">
+                <view>{{address.user}}: {{address.phone}}</view>
+                <view>{{address.region[0]}} {{address.region[1]}} {{address.region[2]}} {{address.address}}</view>
+            </view>
+            <navigator class='iconfont icon-modify modify' url='../address-form/address-form?id={{address._id}}'></navigator>
+        </view>
+    </radio-group>
+</view>
+<view class='footer'>
+    <button class='add-btn' bindtap='addAddress'>
+        <view class='iconfont icon-add add-icon'></view>
+        <view>新增收货地址</view>
+    </button>
+</view>

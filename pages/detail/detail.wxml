@@ -1,0 +1,39 @@
+<view class='detail-wrap'>
+    <view style='margin-bottom:61px;'>
+        <view class='product-banner'>
+            <image class="banner" src="{{product.banner}}" mode="widthFix"/>
+        </view>
+        <view class='title-box'>
+            <view class='pro-title'>{{product.title}}</view>
+            <button plain="true" open-type='share' class='share-btn'>
+                <view class="iconfont icon-fenxiang"></view>
+            </button>
+        </view>
+
+        <view class='pro-promotion-price'>￥{{product.promotion_price}}元/{{product.unit}}</view>
+        <view class='pro-original-price'>￥{{product.original_price}}元/{{product.unit}}</view>
+        <view class='get-num'>
+            <view class='num-text'>购买数量</view>
+            <view>
+                <num-controller num="{{num}}" bindnumChange="numChange"></num-controller>
+            </view>
+        </view>
+        <view class='content'>{{product.content}}</view>
+        <view>
+            <hot-products></hot-products>
+        </view>
+
+        <view class="fix-footer">
+            <view class='footer-left'>
+                <button class='cart' bindtap='goToCart'>
+                    <view class="iconfont icon-cart"></view>
+                    <view wx:if="{{cartNum > 0}}" class="cart-num">{{cartNum}}</view>
+                </button>
+            </view>
+            <view class='footer-right'>
+                <button class='add-cart' bindtap='addCart'>加入购物车</button>
+                <button class='buy-now' bindtap='buyNow'>立即购买</button>
+            </view>
+        </view>
+    </view>
+</view>

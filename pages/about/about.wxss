@@ -1,0 +1,13 @@
+/* pages/about/about.wxss */
+.content{
+    font-size: 12px;
+    line-height: 2.2em;
+    padding: 10px;
+    text-indent: 2em;
+}
+.img-box{
+    text-align: center;
+}
+.zhizhao{
+    width: 200px;
+}

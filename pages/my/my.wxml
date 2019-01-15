@@ -1,0 +1,55 @@
+<!--pages/my/my.wxml-->
+<view class="page-body-info">
+    <view class='user-msg'>
+        <view class='avatar-box'>
+            <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
+        </view>
+        <open-data type="userNickName" class="userinfo-nickname"></open-data>
+    </view>
+
+    <view class='order-list'>
+        <navigator url='../waiting-payment-order/waiting-payment-order'
+        hover-class='none'>
+            <view class='iconfont icon-custom-bank'></view>
+            <view class='order-text'>待付款</view>
+        </navigator>
+        <navigator url='../finish-payment-order/finish-payment-order'
+        hover-class='none'>
+            <view class='iconfont icon-goods'></view>
+            <view class='order-text'>待收货</view>
+        </navigator>
+        <navigator url='../all-orders/all-orders'
+        hover-class='none'>
+            <view class='iconfont icon-order'></view>
+            <view class='order-text'>全部订单</view>
+        </navigator>
+    </view>
+    <view class='list'>
+        <navigator class='list-item' url='../address/address' hover-class='none'>
+            <text class="iconfont icon-address nav-icon"></text>
+            <text class='nav-text'>收货地址</text>
+            <text class="iconfont icon-right nav-icon"></text>
+        </navigator>
+        <view class='list-item'>
+            <text class="iconfont icon-fankui nav-icon"></text>
+            <button open-type="feedback" plain class='feed-btn'>反馈</button>
+            <text class="iconfont icon-right nav-icon"></text>
+        </view>
+        <view class='list-item'>
+            <text class="iconfont icon-custom-help nav-icon"></text>
+            <button open-type="contact" plain class='feed-btn'>联系客服</button>
+            <text class="iconfont icon-right nav-icon"></text>
+        </view> 
+        <view class='list-item'>
+            <text class="iconfont icon-fankui nav-icon"></text>
+            <button open-type="openSetting" plain class='feed-btn'>授权</button>
+            <text class="iconfont icon-right nav-icon"></text>
+        </view>   
+        <navigator class='list-item' url='../about/about' hover-class='none'>
+            <text class="iconfont icon-about nav-icon"></text>
+            <text class='nav-text'>关于程程便利店</text>
+            <text class="iconfont icon-right nav-icon"></text>
+        </navigator>
+    </view>
+    <hot-products></hot-products>
+</view>

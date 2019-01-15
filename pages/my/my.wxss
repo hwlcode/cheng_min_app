@@ -1,0 +1,76 @@
+/* pages/my/my.wxss */
+
+.page-body-info {
+    background: #f2f2f2;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+}
+.user-msg{
+    background: #f73859;
+}
+
+.avatar-box{
+    text-align: center;
+}
+
+.userinfo-avatar {
+    border-radius: 100rpx;
+    width: 100rpx;
+    height: 100rpx;
+    display: inline-block;
+    overflow: hidden;
+}
+.userinfo-nickname {
+    margin: 10rpx 0 20px 0;
+    font-size: 12px;
+    text-align: center;
+    color:#fff;
+    display: block;
+}
+.order-list{
+    margin: 0 0 10px 0;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+}
+.order-text{
+    margin-top: 5px;
+}
+
+.list{ margin-bottom: 10px; background: #fff;}
+.list-item{
+    padding: 0 0 0 0;
+    border-bottom: 1px #f2f2f2 solid;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-text{
+    font-size: 12px;
+    line-height: 50px;
+    height: 50px;
+    color: #333;
+    width: 100%;
+    padding-left: 1px;
+}
+.nav-icon{
+    color: #a9b7b7;
+    font-size: 16px;
+    width: 20px;
+    margin-left:15px;
+    margin-right:10px;
+    padding-top:16px;
+}
+.feed-btn{
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    height: 50px;
+    line-height: 45px;
+    border: 1px transparent solid!important;
+}

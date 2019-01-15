@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "navigationBarTitleText": "商城",
+    "navigationBarBackgroundColor": "#f73859",
+    "navigationBarTextStyle": "white",
+    "usingComponents": {}
+}

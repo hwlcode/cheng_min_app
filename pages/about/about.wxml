@@ -1,0 +1,8 @@
+<!--pages/about/about.wxml-->
+<view class='content'>
+经营小吃服务。预包装食品兼散装食品、乳制品（不含婴幼儿配方乳粉）、日用百货、卷 烟、烟花爆竹零售（依法需经批准的项目，经相关部门批准后方可开展经营活动）
+</view>
+<view class='content'>店主：15607927556</view>
+<view class='img-box'>
+    <image src='../../lib/images/zhizhao.jpg' class='zhizhao'/>
+</view>

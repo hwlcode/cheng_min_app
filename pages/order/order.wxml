@@ -1,0 +1,53 @@
+<!--pages/settlement/settlement.wxml-->
+<view class='address'>
+    <view class='address-msg' wx:if="{{address != null}}">
+        <view class='flex-box'>
+            <view class="address-user">
+                <view>{{address.user}}: {{address.phone}}</view>
+                <view>{{address.region[0]}} {{address.region[1]}} {{address.region[2]}} {{address.address}}</view>
+            </view>
+            <!-- <view class='iconfont icon-right'></view> -->
+        </view>
+    </view>
+    <view class='no-address' wx:if="{{address == null}}" bindtap='changeAddress'>
+        <view class='no-address-text'>您还没有设置默认收货地址</view>
+        <view class='iconfont icon-right'></view>
+    </view>
+</view>
+
+<view wx:if="{{order.products.length > 0}}" class="cart-list">
+    <view wx:for="{{order.products}}" wx:for-index="idx" wx:for-item="cart" wx:key="order" style='background: #fff; padding: 10px 10px 0 10px; margin-bottom:10px;'>
+        <view class="cart-items">
+            <view class="banner">
+                <image src="{{cart.product.banner}}" class="banner-img"></image>
+            </view>
+            <view class='cart-right'>
+                <view class='title-box'>
+                    <view class='title'>{{cart.product.title}}</view>
+                    <view class='price-box'>
+                        <view class='promotion-price'>￥{{cart.product.promotion_price}}元/{{cart.product.unit}}</view>
+                        <view class='original-price'>￥{{cart.product.original_price}}元/{{cart.product.unit}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}元</view>
+    </view>
+</view>
+
+<view class='footer'>
+    <view class='btn-flex'>
+        <!--status:0: 创建-->
+        <view class='sum' wx:if="{{order.status == 0}}">还需支付：
+            <view class='sum-num'>￥{{order.sumPrice}}</view>
+        </view>
+        <button class='settlement del' bindtap='canncelOrder' wx:if="{{order.status ==0}}">取消订单</button>
+        <button class='settlement' bindtap='settlement' wx:if="{{order.status ==0}}">微信支付</button>
+        <!--status:1 :己付款-->
+        <view class='has-pay' wx:if="{{order.status == 1}}">己付款，待商家发货</view>
+        <!--status:2 :己发货-->
+        <view class='has-pay' wx:if="{{order.status == 2}}">商家己发货，请注意查收物流</view>
+        <!--status:1000: 己取消-->
+        <button class='settlement del' bindtap='delOrder' wx:if="{{order.status == 1000}}">删除订单</button>
+    </view>
+</view>
