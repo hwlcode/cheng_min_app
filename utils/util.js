@@ -1,9 +1,39 @@
+const formatTime = date => {
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    const hour = date.getHours()
+    const minute = date.getMinutes()
+    const second = date.getSeconds()
+
+    return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
+const formatDate = date => {
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+
+    return [year, month, day].map(formatNumber).join('-')
+}
+const formatNumber = n => {
+    n = n.toString()
+    return n[1] ? n : '0' + n
+}
+const formatTimeNew = date => {
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    const hour = date.getHours()
+    const minute = date.getMinutes()
+    const second = date.getSeconds()
+    return [hour, minute].map(formatNumber).join(':')
+}
 // api域名配置
-const domain = 'http://192.168.1.104';
+const domain = 'https://admin.welcometo5g.cn';
 // 登录
 const _login = userInfo => {
     let self = this;
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         wx.login({
             success(res) {
                 if (res.code) {
@@ -64,7 +94,7 @@ const _auth = () => {
         })
     });
 }
-
+// 返回promise登录，方便处理登录后的事件
 const login = () => {
     return new Promise((resolve, reject) => {
         _auth().then(userInfo => {
@@ -74,7 +104,66 @@ const login = () => {
     });
 }
 
+const _accessToken = () => {
+    return new Promise((resolve, reject) => {
+        _auth().then(userInfo => {
+            _login(userInfo).then(data => {
+                let openid = data.data;
+                wx.request({
+                    url: domain + '/api/min/get-access-token',
+                    data: {
+                        openid: openid
+                    },
+                    header: {
+                        Token: wx.getStorageSync('token')
+                    },
+                    method: 'get',
+                    success(res) {
+                        resolve(res.data.data);
+                    }
+                })
+            });
+        });
+    })
+}
+
+const sendMessageToUser = (template_id, form_id, page, data, emphasis_keyword) => {
+    return new Promise((resolove, reject) => {
+        _accessToken().then((access_token) => {
+            let url = 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=' + access_token;
+            let _jsonData = {
+                access_token: access_token,
+                touser: wx.getStorageSync('token'),
+                template_id: template_id,
+                form_id: form_id,
+                page: page,
+                data: data,
+                emphasis_keyword: emphasis_keyword || ''
+            }
+            console.log(_jsonData);
+            wx.request({
+                url: url,
+                data: _jsonData,
+                method: 'post',
+                success: function(res) {
+                    resolove(res);
+                },
+                fail: function(err) {
+                    console.log('request fail ', err);
+                },
+                complete: function(res) {
+                    console.log("request completed!");
+                }
+            });
+        });
+    });
+}
+
 module.exports = {
-    domain, 
-    login
+    domain,
+    login,
+    sendMessageToUser,
+    formatTime: formatTime,
+    formatDate: formatDate,
+    formatTimeNew: formatTimeNew
 }

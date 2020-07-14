@@ -10,8 +10,8 @@
             </button>
         </view>
 
-        <view class='pro-promotion-price'>￥{{product.promotion_price}}元/{{product.unit}}</view>
-        <view class='pro-original-price'>￥{{product.original_price}}元/{{product.unit}}</view>
+        <view class='pro-promotion-price'>￥{{product.promotion_price}}/{{product.unit}}</view>
+        <view class='pro-original-price'>￥{{product.original_price}}/{{product.unit}}</view>
         <view class='get-num'>
             <view class='num-text'>购买数量</view>
             <view>

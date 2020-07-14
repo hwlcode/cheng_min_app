@@ -1,60 +1,62 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/login/login",
-        "pages/order/order",
-        "pages/settlement/settlement",
-        "pages/my/my",
-        "pages/waiting-payment-order/waiting-payment-order",
-        "pages/finish-payment-order/finish-payment-order",
-        "pages/all-orders/all-orders",
-        "pages/detail/detail",
-        "pages/cart/cart",
-        "pages/address/address",
-        "pages/address-form/address-form",
-        "pages/mall/mall",
-        "pages/about/about"
-    ],
-    "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "程程便利店",
-        "navigationBarTextStyle": "#fff"
-    },
-    "tabBar": {
-        "color": "#999",
-        "selectedColor": "#000",
-        "backgroundColor": "#fff",
-        "borderStyle": "#f2f2f2",
-        "list": [
-            {
-                "index": 0,
-                "text": "首页",
-                "iconPath": "lib/images/home.png",
-                "selectedIconPath": "lib/images/home_hover.png",
-                "pagePath": "pages/index/index"
-            },
-            {
-                "index": 1,
-                "text": "商城",
-                "iconPath": "lib/images/mall.png",
-                "selectedIconPath": "lib/images/mall_hover.png",
-                "pagePath": "pages/mall/mall"
-            },
-            {
-                "index": 2,
-                "text": "购物车",
-                "iconPath": "lib/images/cart.png",
-                "selectedIconPath": "lib/images/cart_hover.png",
-                "pagePath": "pages/cart/cart"
-            },
-            {
-                "index": 3,
-                "text": "个人中心",
-                "iconPath": "lib/images/user.png",
-                "selectedIconPath": "lib/images/user_hover.png",
-                "pagePath": "pages/my/my"
-            }
-        ]
-    }
+  "pages": [
+    "pages/index/index",
+    "pages/activity/activity",
+    "pages/login/login",
+    "pages/order/order",
+    "pages/settlement/settlement",
+    "pages/my/my",
+    "pages/waiting-payment-order/waiting-payment-order",
+    "pages/finish-payment-order/finish-payment-order",
+    "pages/all-orders/all-orders",
+    "pages/detail/detail",
+    "pages/cart/cart",
+    "pages/address/address",
+    "pages/address-form/address-form",
+    "pages/mall/mall",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "程程便利店",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#000",
+    "backgroundColor": "#fff",
+    "borderStyle": "#f2f2f2",
+    "list": [
+      {
+        "index": 0,
+        "text": "首页",
+        "iconPath": "lib/images/home.png",
+        "selectedIconPath": "lib/images/home_hover.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "index": 1,
+        "text": "商城",
+        "iconPath": "lib/images/mall.png",
+        "selectedIconPath": "lib/images/mall_hover.png",
+        "pagePath": "pages/mall/mall"
+      },
+      {
+        "index": 2,
+        "text": "购物车",
+        "iconPath": "lib/images/cart.png",
+        "selectedIconPath": "lib/images/cart_hover.png",
+        "pagePath": "pages/cart/cart"
+      },
+      {
+        "index": 3,
+        "text": "个人中心",
+        "iconPath": "lib/images/user.png",
+        "selectedIconPath": "lib/images/user_hover.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

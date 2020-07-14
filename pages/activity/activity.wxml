@@ -1,0 +1,5 @@
+<view wx:for="{{activity.ActivitiesBanner}}" wx:for-item="banner" wx:key="ActivitiesBanner" class='banner-box'>
+    <navigator url='../detail/detail?id={{activity.proId}}'>
+        <image class='banner' src="{{banner}}" mode="widthFix" />
+    </navigator>
+</view>

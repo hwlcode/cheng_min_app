@@ -15,14 +15,14 @@
                             <view class='title'>{{product.product.title}}</view>
                         </view>
                         <view class='flex-right'>
-                            <view class='price'>￥{{product.product.promotion_price}}元/{{product.product.unit}}</view>
+                            <view class='price'>￥{{product.product.promotion_price}}/{{product.product.unit}}</view>
                             <view class='num'>x {{product.num}}</view>
                         </view>
                     </view>
                 </view>
             </view>
             <view class="pro-sum-msg">
-                实付 ￥{{order.sumPrice}}元
+                实付 ￥{{order.sumPrice}}
             </view>
             <view class='order-footer' wx:if="{{order.status == 0}}">
                 <button class='pay-now'>去付款</button>

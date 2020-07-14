@@ -1,6 +1,6 @@
 // pages/settlement/settlement.js
 import {
-    domain, login
+    domain, login, sendMessageToUser, formatTime
 } from '../../utils/util.js';
 Page({
 
@@ -54,9 +54,10 @@ Page({
                     // console.log(json);
                     self.setData({
                         order: json,
-                        no: json['sn']
+                        no: json['sn'],
+                        sumPrice: json['sumPrice']
                     });
-                    self.getAddress(json['address']);
+                    self.getAddress(json['address']['_id']);
                 }
             }
         });
@@ -94,8 +95,34 @@ Page({
         })
     },
 
-    canncelOrder(){
+    canncelOrder(e){
+        let self = this;
+        let formId = e.detail.formId;
         this.updateOrder({id: this.data.sn, status: 1000});
+
+        // 发送模板消息
+        let address = self.data.address.user + ' ' + self.data.address.phone + ' ' + self.data.address.region[0] + ' ' + self.data.address.region[1] + ' ' + self.data.address.region[2] + ' ' + self.data.address.address;
+        sendMessageToUser('-SlANr3qc4UyLZb5v3t0Btx7QBK7tIcm2CxYQyQUPXU', formId, 'pages/all-orders/all-orders', {
+            'keyword1': {//订单编号
+                'value': self.data.no
+            },
+            'keyword2': {//商品清单
+                'value': '小超市商品付款'
+            },
+            'keyword3': {//订单金额
+                'value': self.data.sumPrice + '元'
+            },
+            'keyword4': {//订单状态
+                'value': '订单己取消'
+            },
+            'keyword5': {//取消时间
+                'value': formatTime(new Date(self.data.order.updatedAt))
+            },
+            'keyword6': {//收货地址
+                'value': address
+            }
+        }, 'keyword3.DATA');
+
         wx.navigateBack({
             delta: 1
         })
@@ -118,8 +145,9 @@ Page({
         });
     },
 
-    settlement() {
+    settlement(e) {
         let self = this;
+        let formId = e.detail.formId;
         if (this.data.address == null) {
             wx.showToast({
                 title: '请先完善收货地址',
@@ -151,6 +179,33 @@ Page({
                             success(res) {
                                 // 用户支付成功
                                 self.updateOrder({ id: self.data.sn, status: 1 });
+                
+                                // 发送模板消息
+                                let address = self.data.address.user + ' ' + self.data.address.phone + ' ' + self.data.address.region[0] + ' ' + self.data.address.region[1] + ' ' + self.data.address.region[2] + ' ' + self.data.address.address;
+                                sendMessageToUser('qUBiUt2vB-W5TN_nDj-U7myfeabLqBuJllSziQg7RA4', formId, 'pages/all-orders/all-orders', {
+                                    'keyword1': {//订单编号
+                                        'value': self.data.no
+                                    },
+                                    'keyword2': {//下单时间
+                                        'value': formatTime(new Date(self.data.order.createdAt))
+                                    },
+                                    'keyword3': {//商品清单
+                                        'value': '小超市商品付款'
+                                    },
+                                    'keyword4': {//订单金额
+                                        'value': self.data.sumPrice + '元'
+                                    },
+                                    'keyword5': {//订单状态
+                                        'value': '付款成功'
+                                    },
+                                    'keyword6': {//客户名称
+                                        'value': self.data.order.customer.userInfo.nickName
+                                    },
+                                    'keyword7': {//收货地址
+                                        'value': address
+                                    }
+                                }, 'keyword4.DATA');
+
                                 wx.navigateBack({
                                     delta: 1
                                 })
@@ -158,6 +213,25 @@ Page({
                             fail(res) {
                                 // 用户取消了支付 
                                 self.updateOrder({ id: self.data.sn, status: 0 });
+                                // 发送模板消息
+                                sendMessageToUser('gfl7331RUZ7l8S8m9qg7tnyBi14Ci1VkbElhVVZG3gg', formId, 'pages/waiting-payment-order/waiting-payment-order', {
+                                    'keyword1': {//订单编号
+                                        'value': self.data.no
+                                    },
+                                    'keyword2': {//商品清单
+                                        'value': '小超市商品付款'
+                                    },
+                                    'keyword3': {//订单金额
+                                        'value': self.data.sumPrice + '元'
+                                    },
+                                    'keyword4': {//下单时间
+                                        'value': formatTime(new Date(self.data._order.createdAt))
+                                    },
+                                    'keyword5': {//订单状态
+                                        'value': '取消付款'
+                                    }
+                                }, 'keyword5.DATA');
+
                                 wx.navigateBack({
                                     delta: 1
                                 })
@@ -215,7 +289,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        
     },
 
     /**

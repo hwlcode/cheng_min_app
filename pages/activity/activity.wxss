@@ -1,0 +1,2 @@
+/* pages/activity/activity.wxss */
+.banner{width: 100%; display: block;}

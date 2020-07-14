@@ -1,8 +1,10 @@
 <!--index.wxml-->
 <view class="container">
     <view class='title'>最新活动</view>
-    <view wx:for="{{banners}}" wx:for-item="i" wx:key="homeBanner" class='banner-box'>
-        <image class='banner' src="{{i}}" mode="widthFix"/>
+    <view wx:for="{{banners}}" wx:for-item="banner" wx:key="homeBanner" class='banner-box'>
+        <navigator url='../activity/activity?id={{banner._id}}'>
+            <image class='banner' src="{{banner.indexBanner}}" mode="widthFix" />
+        </navigator>
     </view>
 </view>
 <view>

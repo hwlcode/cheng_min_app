@@ -1,7 +1,7 @@
 {
     "usingComponents": {},
-    "enablePullDownRefresh": true,
     "navigationBarTitleText": "全部订单",
     "navigationBarBackgroundColor": "#f73859",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
 }

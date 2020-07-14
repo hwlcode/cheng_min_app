@@ -25,13 +25,13 @@
                 <view class='title-box'>
                     <view class='title'>{{cart.product.title}}</view>
                     <view class='price-box'>
-                        <view class='promotion-price'>￥{{cart.product.promotion_price}}元/{{cart.product.unit}}</view>
-                        <view class='original-price'>￥{{cart.product.original_price}}元/{{cart.product.unit}}</view>
+                        <view class='promotion-price'>￥{{cart.product.promotion_price}}/{{cart.product.unit}}</view>
+                        <view class='original-price'>￥{{cart.product.original_price}}/{{cart.product.unit}}</view>
                     </view>
                 </view>
             </view>
         </view>
-        <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}元</view>
+        <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}</view>
     </view>
 </view>
 
@@ -41,8 +41,12 @@
         <view class='sum' wx:if="{{order.status == 0}}">还需支付：
             <view class='sum-num'>￥{{order.sumPrice}}</view>
         </view>
-        <button class='settlement del' bindtap='canncelOrder' wx:if="{{order.status ==0}}">取消订单</button>
-        <button class='settlement' bindtap='settlement' wx:if="{{order.status ==0}}">微信支付</button>
+        <form report-submit bindsubmit='canncelOrder'>
+        <button class='settlement del' form-type='submit' wx:if="{{order.status ==0}}">取消订单</button>
+        </form>
+        <form report-submit bindsubmit='settlement'>
+            <button class='settlement' form-type='submit' wx:if="{{order.status ==0}}">微信支付</button>
+        </form>
         <!--status:1 :己付款-->
         <view class='has-pay' wx:if="{{order.status == 1}}">己付款，待商家发货</view>
         <!--status:2 :己发货-->

@@ -9,8 +9,8 @@
                     <view class='title-box'>
                         <view class='title'>{{cart.product.title}}</view>
                         <view class='price-box'>
-                            <view class='promotion-price'>￥{{cart.product.promotion_price}}元/{{cart.product.unit}}</view>
-                            <view class='original-price'>￥{{cart.product.original_price}}元/{{cart.product.unit}}</view>
+                            <view class='promotion-price'>￥{{cart.product.promotion_price}}/{{cart.product.unit}}</view>
+                            <view class='original-price'>￥{{cart.product.original_price}}/{{cart.product.unit}}</view>
                         </view>
                     </view>
                     <view class='btn-box'>
@@ -19,14 +19,14 @@
                     </view>
                 </view>
             </view>
-            <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}元</view>
+            <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}</view>
         </view>
 
     </view>
     <view class='no-products' wx:if="{{cart.length < 1}}">您的购物车空空如也～</view>
 </view>
 <view class='footer'>
-    <view class='sum'>总金额：￥<view class='sum-num'>{{sum}}</view>元</view>
+    <view class='sum'>总金额：￥<view class='sum-num'>{{sum}}</view></view>
     <button class='settlement' bindtap='settlement' disabled="{{sum == 0}}">结算</button>
 </view>
 

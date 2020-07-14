@@ -7,14 +7,7 @@ const app = getApp()
 
 Page({
     data: {
-        banners: [
-            'https://ae01.alicdn.com/kf/HTB1kQkzayHrK1Rjy0Flq6AsaFXa9.jpg', 'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-            'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-            'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-            'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-            'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-            'https://ae01.alicdn.com/kf/HTB1JqgJhNPI8KJjSspoq6x6MFXag.jpg',
-        ]
+        banners: []
     },
 
     onLoad: function() {
@@ -22,6 +15,18 @@ Page({
     },
 
     onShow: function() {
-
+        let self = this;
+        wx.request({
+            url: domain + '/api/min/activities/list',
+            method: 'GET',
+            success(res) {
+                if (res['status'] = 200) {
+                    self.setData({
+                        banners: res['data']['data']
+                    });
+                }
+            }
+        });
+        
     }
 })

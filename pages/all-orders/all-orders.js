@@ -151,7 +151,21 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {    
-        this.getOrderList(1);
+        let self = this;
+
+        wx.getSystemInfo({
+            success: function (res) {
+                self.setData({
+                    windowHeight: res.windowHeight
+                });
+            }
+        });
+
+        login().then(() => {
+            self.getOrderList(1);
+        });
+        
+        wx.stopPullDownRefresh();
     },
 
     /**

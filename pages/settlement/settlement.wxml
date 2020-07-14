@@ -25,17 +25,19 @@
                 <view class='title-box'>
                     <view class='title'>{{cart.product.title}}</view>
                     <view class='price-box'>
-                        <view class='promotion-price'>￥{{cart.product.promotion_price}}元/{{cart.product.unit}}</view>
-                        <view class='original-price'>￥{{cart.product.original_price}}元/{{cart.product.unit}}</view>
+                        <view class='promotion-price'>￥{{cart.product.promotion_price}}/{{cart.product.unit}}</view>
+                        <view class='original-price'>￥{{cart.product.original_price}}/{{cart.product.unit}}</view>
                     </view>
                 </view>
             </view>
         </view>
-        <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}元</view>
+        <view class='total-price'>￥{{cart.product.promotion_price * cart.num}}</view>
     </view>
 </view>
 
 <view class='footer'>
-    <view class='sum'>还需支付：<view class='sum-num'>￥{{sumPrice}}元</view></view>
-    <button class='settlement' bindtap='settlement'>微信支付</button>
+    <view class='sum'>还需支付：<view class='sum-num'>￥{{sumPrice}}</view></view>
+    <form name='pushMsgFm' report-submit bindsubmit='settlement'>  
+        <button class='settlement' form-type='submit'>微信支付</button>
+    </form>
 </view>
